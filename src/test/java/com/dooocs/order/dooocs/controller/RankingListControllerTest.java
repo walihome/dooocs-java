@@ -19,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class RankingControllerTest {
+public class RankingListControllerTest {
 
     @Autowired
     private MockMvc mockMvc;

@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/rankings")
-public class RankingController {
+@RequestMapping("/api/rankingList")
+public class RankingListController {
     
     @Autowired
     private RankingListService rankingListService;
@@ -21,7 +21,12 @@ public class RankingController {
     private RankingItemService rankingItemService;
     
     // 排行榜相关接口
-    @PostMapping("/lists")
+
+    @GetMapping("/lists")
+    public ResponseEntity<List<RankingList>> getList() {
+        return ResponseEntity.ok(rankingListService.getAllRankingLists());
+    }
+    @PostMapping("/create")
     public ResponseEntity<Void> createRankingList(@RequestBody RankingList rankingList) {
         rankingListService.createRankingList(rankingList);
         return ResponseEntity.ok().build();
@@ -44,12 +49,7 @@ public class RankingController {
     public ResponseEntity<RankingList> getRankingList(@PathVariable Long id) {
         return ResponseEntity.ok(rankingListService.getRankingList(id));
     }
-    
-    @GetMapping("/lists")
-    public ResponseEntity<List<RankingList>> getAllRankingLists() {
-        return ResponseEntity.ok(rankingListService.getAllRankingLists());
-    }
-    
+
     // 排行榜项目相关接口
     @PostMapping("/items")
     public ResponseEntity<Void> createRankingItem(@RequestBody RankingItem rankingItem) {
