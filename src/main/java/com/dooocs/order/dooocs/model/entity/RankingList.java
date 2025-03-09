@@ -9,7 +9,7 @@ public class RankingList {
     private String coverUrl;
     private String type;
     private String updateCycle;
-    private Long creatorId;
+    private String creatorId;
     private Integer status;
     private Date createdAt;
     private Date updatedAt;
@@ -62,11 +62,11 @@ public class RankingList {
         this.updateCycle = updateCycle;
     }
 
-    public Long getCreatorId() {
+    public String getCreatorId() {
         return creatorId;
     }
 
-    public void setCreatorId(Long creatorId) {
+    public void setCreatorId(String creatorId) {
         this.creatorId = creatorId;
     }
 

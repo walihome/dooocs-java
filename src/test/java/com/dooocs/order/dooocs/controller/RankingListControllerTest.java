@@ -33,7 +33,7 @@ public class RankingListControllerTest {
         RankingList rankingList = new RankingList();
         rankingList.setTitle("Test Ranking");
         rankingList.setDescription("Test Description");
-        rankingList.setCreatorId(1L);
+        rankingList.setCreatorId("1");
         rankingList.setUpdatedAt(new Date());
         rankingList.setCreatedAt(new Date());
 
